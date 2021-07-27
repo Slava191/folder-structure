@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Dir :content="getDirTree"/>
+  <div>{{getDirTree}}</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import { mapActions, mapGetters } from 'vuex'
+import Dir from '@/components/Dir.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { Dir },
+  // data(){
+  //     return {
+  //         content: null
+  //     }
+  // },
+  computed:{
+    ...mapGetters(['getDirTree'])
+  },
+  methods:{
+    ...mapActions(['loadDirTree'])
+  },
+  async created(){
+      await this.loadDirTree()
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
