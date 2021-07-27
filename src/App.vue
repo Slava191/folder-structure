@@ -1,6 +1,5 @@
 <template>
   <Dir :content="getDirTree"/>
-  <div>{{getDirTree}}</div>
 </template>
 
 <script>
@@ -11,11 +10,6 @@ import Dir from '@/components/Dir.vue'
 export default {
   name: 'App',
   components: { Dir },
-  // data(){
-  //     return {
-  //         content: null
-  //     }
-  // },
   computed:{
     ...mapGetters(['getDirTree'])
   },
