@@ -1,5 +1,16 @@
 <template>
-  <Dir :content="getDirTree"/>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <span class="navbar-brand">Дерево директорий</span>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <Dir :content="getDirTree"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

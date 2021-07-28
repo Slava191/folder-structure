@@ -14,7 +14,6 @@ const mutations = {
         
         state.dirTree = dirTree
 
-        console.log(state.dirTree)
     },
     ADD_TO_DIR_TREE: (state, dirTree) => {
 
@@ -63,8 +62,6 @@ const actions = {
 
             const dirTree  = (await Axios.get(`http://164.90.161.80:3000/api/content?dirId=${id}`)).data
 
-            console.log(dirTree)
-        
             commit('ADD_TO_DIR_TREE', dirTree)
 
         }
